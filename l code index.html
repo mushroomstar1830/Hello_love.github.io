@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #e74c3c;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 20px auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .hidden {
+            display: none;
+        }
+        .memory {
+            margin: 40px 0;
+        }
+        .memory img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Introduction -->
+    <div id="page1">
+        <h1>Hey Love 😻,</h1>
+        <p>I’ve created something special for you. Let’s take a little journey through our story...</p>
+        <button onclick="showPage('page2')">Let's Begin</button>
+    </div>
+
+    <!-- Page 2: First Movie ❤️-->
+    <div id="page2" class="hidden">
+        <h1>Do you remember our first movie🍿?</h1>
+        <p>It was ENPT and we shared a wonderful time there so much fun</p>
+        <div class="memory">
+          <img src="ENPT_FM.jpg" alt="Uploaded Image" width="500">  
+        </div>
+        <button onclick="showPage('page3')">Next</button>
+    </div>
+
+    <!-- Page 3: Second Memory -->
+    <div id="page3" class="hidden">
+        <h1>What about our first trip to our friend's marraige🚞?</h1>
+        <p>We had a heavy dinner and we was so full.We were struggling to walk in the road and we walked like a drunk people.Really that incident made me love you so much.</p>
+        <div class="memory">
+            <img src="first-trip.jpg" alt="Our First Trip">
+        </div>
+        <button onclick="showPage('page4')">Next</button>
+    </div>
+
+    <!-- Page 4: Third Memory -->
+    <div id="page4" class="hidden">
+        <h1>And before all othese, how many color paper do you want📝?</h1>
+        <p>Thats the first memory will come to my mind if i think about and our love story starts with colours...</p>
+        <div class="memory">
+            <img src="late-night.jpg" alt="Late Night Talks">
+        </div>
+        <button onclick="showPage('page5')">Next</button>
+    </div>
+
+    <!-- Page 5: Final Proposal -->
+    <div id="page5" class="hidden">
+        <h1>You Mean Everything to Me</h1>
+        <p>Every moment with you has been a treasure. You’ve made my life so much brighter, and I can’t imagine a future without you.</p>
+        <p>So, my love, I have one more question for you...</p>
+        <button onclick="showPage('proposal')">What is it?</button>
+    </div>
+
+    <!-- Final Page: Proposal -->
+    <div id="proposal" class="hidden">
+        <h1>Will You be my Valentine?😍</h1>
+        <p>I want to spend the rest of my life making you as happy as you’ve made me. What do you say?</p>
+        <button onclick="alert('Yay! I love you! 💍')">Yes!</button>
+        <button onclick="this.style.display = 'none'">No</button>
+    </div>
+
+    <script>
+        // Function to show the next page
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('div').forEach(div => {
+                div.classList.add('hidden');
+            });
+            // Show the selected page
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        // Confetti animation
+        function celebrate() {
+            // Trigger confetti
+            confetti({
+                particleCount: 100, // Number of confetti particles
+                spread: 70, // How far the confetti spreads
+                origin: { y: 0.6 } // Start from the middle of the screen
+            });
+
+            // Show a sweet alert
+            alert('Yay! I love you! 💍');
+        }
+    </script>
+</body>
+</html>
